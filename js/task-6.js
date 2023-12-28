@@ -40,3 +40,9 @@ destroyButton.addEventListener('click', () => {
 function destroyBoxes() {
   boxesContainer.innerHTML = '';
 }
+
+const button1 = document.querySelector('button[data-create]');
+const button2 = document.querySelector('button[data-destroy]');
+
+button1.classList.add('button1');
+button2.classList.add('button2');

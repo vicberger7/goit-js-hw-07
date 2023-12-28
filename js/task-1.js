@@ -24,13 +24,12 @@ let list = [
   'JavaScript',
   'React',
   'Node.js',
-]; // ваш масив з текстами
-let lis = document.getElementsByTagName('li'); // отримуємо всі елементи <li>
+];
+
+let lis = document.getElementsByTagName('li');
 
 Array.from(lis).forEach(li => {
-  // перебираємо елементи <li>
   if (list.includes(li.innerText)) {
-    // перевіряємо, чи містить текст з масиву
-    li.classList.add('item-unit'); // додаємо клас item-unit
+    li.classList.add('item-unit');
   }
 });
