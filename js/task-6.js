@@ -18,6 +18,7 @@ createButton.addEventListener('click', () => {
 const boxesContainer = document.querySelector('#boxes');
 
 function createBoxes(amount) {
+  destroyBoxes();
   let boxSize = 30;
   let boxesHTML = '';
 
@@ -27,15 +28,12 @@ function createBoxes(amount) {
     boxesHTML += boxHTML;
     boxSize += 10;
   }
-
   boxesContainer.innerHTML = boxesHTML;
 }
 
 const destroyButton = document.querySelector('[data-destroy]');
 
-destroyButton.addEventListener('click', () => {
-  destroyBoxes();
-});
+destroyButton.addEventListener('click', destroyBoxes);
 
 function destroyBoxes() {
   boxesContainer.innerHTML = '';
@@ -43,6 +41,5 @@ function destroyBoxes() {
 
 const button1 = document.querySelector('button[data-create]');
 const button2 = document.querySelector('button[data-destroy]');
-
 button1.classList.add('button1');
 button2.classList.add('button2');
