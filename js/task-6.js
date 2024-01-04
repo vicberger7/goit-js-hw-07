@@ -20,15 +20,18 @@ const boxesContainer = document.querySelector('#boxes');
 function createBoxes(amount) {
   destroyBoxes();
   let boxSize = 30;
-  let boxesHTML = '';
+  const fragment = document.createDocumentFragment();
 
   for (let i = 0; i < amount; i++) {
     const color = getRandomHexColor();
-    const boxHTML = `<div style="width: ${boxSize}px; height: ${boxSize}px; background-color: ${color}"></div>`;
-    boxesHTML += boxHTML;
+    const box = document.createElement('div');
+    box.style.width = `${boxSize}px`;
+    box.style.height = `${boxSize}px`;
+    box.style.backgroundColor = color;
+    fragment.appendChild(box);
     boxSize += 10;
   }
-  boxesContainer.innerHTML = boxesHTML;
+  boxesContainer.appendChild(fragment);
 }
 
 const destroyButton = document.querySelector('[data-destroy]');

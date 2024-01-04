@@ -119,7 +119,7 @@ button {
 .login-form {
   width: 408px;
   height: 256px;
-  display: inline-flex;
+  display: flex;
   padding: 24px;
   flex-direction: column;
   align-items: flex-start;
